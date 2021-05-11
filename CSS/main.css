@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important;
+}
+
+.card{
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.card-img{
+    height: 100vh;
+}
+
+#searchBox{
+    background: rgba(255, 255, 255, 0.178) !important;
+    border-color: rgba(255, 255, 255, 0.178) !important;
+
+    color: white !important;
+}
+
+    #seachBox:focus{
+        box-shadow: none !important;
+        border: none !important;
+    }
