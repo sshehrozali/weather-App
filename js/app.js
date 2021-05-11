@@ -1,10 +1,29 @@
-document.getElementById("searchBtn").addEventListener("click", function () {
+// On page load
+document.addEventListener("DOMContentLoaded", searchWeather);
+
+
+// When search button is clicked
+document.getElementById("searchBtn").addEventListener("click", searchWeather);
+
+
+
+
+// Function to get Weather result
+function searchWeather() {
+
+    // Get value from input box
     var inputVal = document.getElementById("searchBox").value;
+
+    if (inputVal == "") {
+        inputVal = document.getElementById("searchBox").placeholder;
+    }
+
     var URL = "https://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=da4ce88ffceaa423baf7ef7f5e305d94";
 
     fetch(URL)
         .then(res => res.json())
         .then(data => {
+
             // Fetch temperature
             var kelvin = data["main"]["temp"];
             var centi = kelvin - 273.15;
@@ -24,4 +43,4 @@ document.getElementById("searchBtn").addEventListener("click", function () {
 
 
         })
-})
+}
